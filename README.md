@@ -4,7 +4,7 @@ Jog down and accumulate projects and experiences for resume (for now, and maybe 
 
 English ver see [file](chinese.md). Chinese ver see [file](chinese.md).
 
-Also save some resources related to the experiences as references for potential interview questions.
+Also save some [resources](resources) related to the experiences as references for potential interview questions.
 
 ## some rules:
 - highlight skills using backtick (\`), e.g., `AWS Glue`.
