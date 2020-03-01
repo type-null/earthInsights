@@ -1,6 +1,8 @@
 # Earth insights
 
-Jog down and accumulate projects and experiences for resume (for now, and maybe cover letter). English ver see [file](chinese.md). Chinese ver see [file](chinese.md).
+Jog down and accumulate projects and experiences for resume (for now, and maybe cover letter). 
+
+English ver see [file](chinese.md). Chinese ver see [file](chinese.md).
 
 Also save some resources related to the experiences as references for potential interview questions.
 
