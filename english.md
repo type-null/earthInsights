@@ -1,6 +1,10 @@
-## professional experiences
+# Skills
 
-## projects
+List skills used or acquired.
+
+# Professional Experiences
+
+# Projects
 
 HEDGE FUND DATA ANALYSIS, Columbia University
 
@@ -24,4 +28,4 @@ AUTOMATED AI PIPELINE ON AWS, Columbia University
 ---
 
 
-## activities
+# Activities
