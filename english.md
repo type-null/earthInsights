@@ -1,6 +1,6 @@
 # Skills
 
-List skills used or acquired.
+> List skills used or acquired.
 
 # Professional Experiences
 
