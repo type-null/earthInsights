@@ -4,7 +4,7 @@ Jog down and accumulate projects and experiences for resume (for now, and maybe 
 
 Also save some resources related to the experiences as references for potential interview questions.
 
-# some rules:
+## some rules:
 - highlight skills using backtick (\`), e.g., `AWS Glue`.
 - do **not** delete any trunk of the material. Refine it, note it, keep it.
 - typology:
@@ -22,6 +22,6 @@ Also save some resources related to the experiences as references for potential 
   
   > \[Related files](link/to/resource)
 
-# some resources
+## some resources
 - [IEOR Graduate Student Resume and Cover Letter Resource page](https://ieor.columbia.edu/resume-cover-letter-guidelines)
 
