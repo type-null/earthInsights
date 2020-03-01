@@ -14,7 +14,7 @@ Also save some resources related to the experiences as references for potential 
   - activities: extracurricular works like volunteering and school society
 - reverse chronological order within each category
 - format: (use `---` as divider between events)
-  > ACTIVITY NAME/JOB NAME, Place/Company
+  > ACTIVITY NAME/JOB NAME, Company, Place
   
   > yyyy-mm-dd - yyyy-mm-dd
   
