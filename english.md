@@ -10,8 +10,7 @@ HEDGE FUND DATA ANALYSIS, Columbia University
 
 2020-2-20 - Present
 
-- Filled missing stock size data based on market capitalization formula using `MATLAB`.
-- Clustered stocks into different industry
+
 
 ---
 
