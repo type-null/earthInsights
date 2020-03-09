@@ -10,7 +10,9 @@ HEDGE FUND DATA ANALYSIS, Columbia University
 
 2020-2-20 - Present
 
-
+- Using a database of millions of data points, I researched and implemented systematic investment strategies using machine learning.
+- Employing quantamental factors provided by, and currently used by, an ESG (Environmental, Social, and Governance) fund to invest hundreds of millions of dollars.
+- Curated, transformed, and cleaned the features, identified and forecasted profitable purchases and sales for thousands of assets including the timing of those trades, designed weighting schemes, and backtested strategies employing transaction costs, slippage, and other methods.
 
 ---
 
