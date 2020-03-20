@@ -49,20 +49,21 @@ _In a nutshell:_ Employ almost 15,000 technical trading rules from the main five
             <ul>
                 <li>Bitcoin: <a href="https://www.coindesk.com/price/bitcoin">CoinDesk</a>(2010-07-18)</li>
                 <li><a href="https://www.bitstamp.net">Bitstamp</a>(2012-12-01)</li>
-            </ul>
-            <li><a href="https://litecoin.com/en/">Litecoin</a>, <a href="https://ethereum.org">Ethereum</a> and <a href="https://ripple.com">Ripple</a>: <a href="https://coinmarketcap.com">CoinMarketCap</a></li>
-            <li>Maximum period possible</li></li>
+                <li><a href="https://litecoin.com/en/">Litecoin</a>, <a href="https://ethereum.org">Ethereum</a> and <a href="https://ripple.com">Ripple</a>: <a href="https://coinmarketcap.com">CoinMarketCap</a></li>
+                <li>Maximum period possible</li>
+            </ul></li>
         <li>Technical trading rules:
             <ol>
-                <li>qualitative: identify patterns from charts</li>
-                <li>quantitative: construct trading signals from time-series analysis</li>
+                <li>Qualitative: identify patterns from charts</li>
+                <li>Quantitative: construct trading signals from time-series analysis</li>
             </ol>
+            --- use below five classes
             <ol>
-                <li>moving average: attempt to ride trends and identify imminent breaks by examining moving averages, and are quite similar to the time-series momentum effect</li>
-                <li>filter rules: attempt to follow trends by buying (selling) whenever the price has increased (decreased) by a given percentage</li>
-                <li>support-resistance trading rules: create support or resistance bounds around the price which if they breach, indicates further movement in the same direction</li>
-                <li>oscillator trading rules: attempt to identify overbought (oversold) assets and therefore anticipate the imminent market correction</li>
-                <li>channel breakout rules: identify time-varying support and resistance levels which, once breached, indicate further movement in the same direction.</li>
+                <li>Moving average: attempt to ride trends and identify imminent breaks by examining moving averages, and are quite similar to the time-series momentum effect</li>
+                <li>Filter rules: attempt to follow trends by buying (selling) whenever the price has increased (decreased) by a given percentage</li>
+                <li>Support-resistance trading rules: create support or resistance bounds around the price which if they breach, indicates further movement in the same direction</li>
+                <li>Oscillator trading rules: attempt to identify overbought (oversold) assets and therefore anticipate the imminent market correction</li>
+                <li>Channel breakout rules: identify time-varying support and resistance levels which, once breached, indicate further movement in the same direction.</li>
             </ol>
         </li>
     </ul>
