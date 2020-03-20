@@ -26,7 +26,9 @@ __Con:__ Not much about trading strategy.
 
 _In a nutshell:_
 
-3. Hudson R, Urquhart A. Technical trading and cryptocurrencies. _Annals of operations research_. 08/30/2019. doi: 10.1007/s10479-019-03357-1.
+3. [Technical trading and cryptocurrencies](http://rd8hp6du2b.search.serialssolutions.com/log?L=RD8HP6DU2B&D=SNE&J=ANNAOFOPERE&P=Link&PT=EZProxy&A=Technical+trading+and+cryptocurrencies&H=c1a25a53db&U=http%3A%2F%2Fezproxy.cul.columbia.edu%2Flogin%3Furl%3Dhttps%3A%2F%2Flink.springer.com%2Fopenurl.asp%3Fgenre%3Darticle%26id%3Ddoi%3A10.1007%2Fs10479-019-03357-1), Robert Hudson, 2019
+
+Hudson R, Urquhart A. Technical trading and cryptocurrencies. _Annals of operations research_. 08/30/2019. doi: 10.1007/s10479-019-03357-1.
 
 hahaah
 
