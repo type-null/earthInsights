@@ -1,6 +1,4 @@
-# Mar 19
-
-## Theme choosing (Crypto)
+# Theme choosing (Crypto)
 0. Modeling high-frequency limit order book dynamics with support vector machines
 
 1. [AVA - Advanced Volatility Arbitrage](http://web.stanford.edu/class/msande448/2019/Final_reports/gr6.pdf), Stanford, 2019
@@ -37,7 +35,8 @@ _In a nutshell:_ relationship between social network/news data and cryptocurrenc
     </ul>
 </details>
 
-__Pro:__ good `Acknowledgement`
+__Pro:__ good `Acknowledgement` (thank you teacher)
+
 __Con:__ This article is more like how to build a predictor instead of studying trading strategy. We probably need to delve into improving strategy more and backtest as well.
 
 3. [Technical trading and cryptocurrencies](http://rd8hp6du2b.search.serialssolutions.com/log?L=RD8HP6DU2B&D=SNE&J=ANNAOFOPERE&P=Link&PT=EZProxy&A=Technical+trading+and+cryptocurrencies&H=c1a25a53db&U=http%3A%2F%2Fezproxy.cul.columbia.edu%2Flogin%3Furl%3Dhttps%3A%2F%2Flink.springer.com%2Fopenurl.asp%3Fgenre%3Darticle%26id%3Ddoi%3A10.1007%2Fs10479-019-03357-1), Robert Hudson, 2019
@@ -60,14 +59,14 @@ _In a nutshell:_
 __Con:__ Focusing on construct crypto portfolio. But tests the port through 3 strategies.
 
 
-# Mar 20
+# Proposal
 
-## Proposal
+## Objective
 
-### Objective
+Test different trading strategies on cryptocurrencies market and backtest them. 
 
-### Product and Market
+## Product and Market
 
-### Data
+## Data
 
-### Literature
+## Literature
