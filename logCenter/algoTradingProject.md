@@ -26,7 +26,19 @@ __Con:__ Not much about trading strategy.
 
 2. [Cryptocurrencies Trading Strategy based on Sentiment Analysis](http://web.stanford.edu/class/msande448/2019/Final_reports/gr4.pdf), Stanford, 2019
 
-_In a nutshell:_
+_In a nutshell:_ relationship between social network/news data and cryptocurrencies price.
+
+<details>
+    <ul>
+        <li>Data: BTC-USD from <a href="https://www.coinbase.com">Coinbase</a>, Google Trend and Twitter</li>
+        <li>Signal: (sell, buy) * (positive, negative) matrix</li>
+        <li>Eval plots: scatter, binned, forward biases, proxy backtest</li>
+        <li>Strategy: threshold-based strategy</li>
+    </ul>
+</details>
+
+__Pro:__ good `Acknowledgement`
+__Con:__ This article is more like how to build a predictor instead of studying trading strategy. We probably need to delve into improving strategy more and backtest as well.
 
 3. [Technical trading and cryptocurrencies](http://rd8hp6du2b.search.serialssolutions.com/log?L=RD8HP6DU2B&D=SNE&J=ANNAOFOPERE&P=Link&PT=EZProxy&A=Technical+trading+and+cryptocurrencies&H=c1a25a53db&U=http%3A%2F%2Fezproxy.cul.columbia.edu%2Flogin%3Furl%3Dhttps%3A%2F%2Flink.springer.com%2Fopenurl.asp%3Fgenre%3Darticle%26id%3Ddoi%3A10.1007%2Fs10479-019-03357-1), Robert Hudson, 2019
 
