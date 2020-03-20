@@ -44,3 +44,16 @@ _In a nutshell:_
 _In a nutshell:_
 
 __Con:__ Focusing on construct crypto portfolio. But tests the port through 3 strategies.
+
+
+# Mar 20
+
+## Proposal
+
+### Objective
+
+### Product and Market
+
+### Data
+
+### Literature
