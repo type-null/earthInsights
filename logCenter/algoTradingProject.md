@@ -41,7 +41,32 @@ __Con:__ This article is more like how to build a predictor instead of studying 
 
 3. [Technical trading and cryptocurrencies](http://rd8hp6du2b.search.serialssolutions.com/log?L=RD8HP6DU2B&D=SNE&J=ANNAOFOPERE&P=Link&PT=EZProxy&A=Technical+trading+and+cryptocurrencies&H=c1a25a53db&U=http%3A%2F%2Fezproxy.cul.columbia.edu%2Flogin%3Furl%3Dhttps%3A%2F%2Flink.springer.com%2Fopenurl.asp%3Fgenre%3Darticle%26id%3Ddoi%3A10.1007%2Fs10479-019-03357-1), Robert Hudson, 2019
 
-_In a nutshell:_
+_In a nutshell:_ Employ almost 15,000 technical trading rules from the main five classes of technical trading rules and find significant predictability and profitability for each class of technical trading rule in each cryptocurrency.
+
+<details>
+    <ul>
+        <li>Data: 
+            <ul>
+                <li>Bitcoin: <a href="https://www.coindesk.com/price/bitcoin">CoinDesk</a>(2010-07-18)</li>
+                <li><a href="https://www.bitstamp.net">Bitstamp</a>(2012-12-01)</li>
+            </ul>
+            <li><a href="https://litecoin.com/en/">Litecoin</a>, <a href="https://ethereum.org">Ethereum</a> and <a href="https://ripple.com">Ripple</a>: <a href="https://coinmarketcap.com">CoinMarketCap</a></li>
+            <li>Maximum period possible</li></li>
+        <li>Technical trading rules:
+            <ol>
+                <li>qualitative: identify patterns from charts</li>
+                <li>quantitative: construct trading signals from time-series analysis</li>
+            </ol>
+            <ol>
+                <li>moving average: attempt to ride trends and identify imminent breaks by examining moving averages, and are quite similar to the time-series momentum effect</li>
+                <li>filter rules: attempt to follow trends by buying (selling) whenever the price has increased (decreased) by a given percentage</li>
+                <li>support-resistance trading rules: create support or resistance bounds around the price which if they breach, indicates further movement in the same direction</li>
+                <li>oscillator trading rules: attempt to identify overbought (oversold) assets and therefore anticipate the imminent market correction</li>
+                <li>channel breakout rules: identify time-varying support and resistance levels which, once breached, indicate further movement in the same direction.</li>
+            </ol>
+        </li>
+    </ul>
+</details>
 
 
 4. ✅ [High frequency momentum trading with cryptocurrencies](http://rd8hp6du2b.search.serialssolutions.com/log?L=RD8HP6DU2B&D=ADALY&J=RESEININB&P=Link&PT=EZProxy&A=High+frequency+momentum+trading+with+cryptocurrencies&H=accf7f9d6d&U=http%3A%2F%2Fezproxy.cul.columbia.edu%2Flogin%3Furl%3Dhttps%3A%2F%2Fwww.sciencedirect.com%2Fscience%2Flink%3Fref_val_fmt%3Dinfo%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal%26svc_val_fmt%3Dinfo%3Aofi%2Ffmt%3Akev%3Amtx%3Asch_srv%26rfr_dat%3Dsaltver%3A1%26rfr_dat%3Dorigin%3ASERIALSSOL%26ctx_enc%3Dinfo%3Aofi%2Fenc%3AUTF-8%26ctx_ver%3DZ39.88-2004%26rft_id%3Dinfo%3Adoi%2F10.1016%2Fj.ribaf.2019.101176%26rft.issn%3D02755319%26rft.volume%3D52%26rft.spage%3D101176%26rft.aulast%3DChu%26rft.date%3D2020%26rfr_dat%3Dmd5%3Aed0d4b99c37646f6153a3619e6a3ea2c), Jeffery Chu, 2020
