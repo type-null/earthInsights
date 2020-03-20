@@ -1,6 +1,8 @@
 # Mar 19
 
 ## Theme choosing (Crypto)
+0. Modeling high-frequency limit order book dynamics with support vector machines
+
 1. [AVA - Advanced Volatility Arbitrage](http://web.stanford.edu/class/msande448/2019/Final_reports/gr6.pdf), Stanford, 2019
 
 _In a nutshell: Built model to predict with high accuracy where the market is expected to move over the next n minutes._
