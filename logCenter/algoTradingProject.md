@@ -31,7 +31,7 @@ _In a nutshell:_
 _In a nutshell:_
 
 
-4. [High frequency momentum trading with cryptocurrencies](http://rd8hp6du2b.search.serialssolutions.com/log?L=RD8HP6DU2B&D=ADALY&J=RESEININB&P=Link&PT=EZProxy&A=High+frequency+momentum+trading+with+cryptocurrencies&H=accf7f9d6d&U=http%3A%2F%2Fezproxy.cul.columbia.edu%2Flogin%3Furl%3Dhttps%3A%2F%2Fwww.sciencedirect.com%2Fscience%2Flink%3Fref_val_fmt%3Dinfo%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal%26svc_val_fmt%3Dinfo%3Aofi%2Ffmt%3Akev%3Amtx%3Asch_srv%26rfr_dat%3Dsaltver%3A1%26rfr_dat%3Dorigin%3ASERIALSSOL%26ctx_enc%3Dinfo%3Aofi%2Fenc%3AUTF-8%26ctx_ver%3DZ39.88-2004%26rft_id%3Dinfo%3Adoi%2F10.1016%2Fj.ribaf.2019.101176%26rft.issn%3D02755319%26rft.volume%3D52%26rft.spage%3D101176%26rft.aulast%3DChu%26rft.date%3D2020%26rfr_dat%3Dmd5%3Aed0d4b99c37646f6153a3619e6a3ea2c), Jeffery Chu, 2020
+4. ✅ [High frequency momentum trading with cryptocurrencies](http://rd8hp6du2b.search.serialssolutions.com/log?L=RD8HP6DU2B&D=ADALY&J=RESEININB&P=Link&PT=EZProxy&A=High+frequency+momentum+trading+with+cryptocurrencies&H=accf7f9d6d&U=http%3A%2F%2Fezproxy.cul.columbia.edu%2Flogin%3Furl%3Dhttps%3A%2F%2Fwww.sciencedirect.com%2Fscience%2Flink%3Fref_val_fmt%3Dinfo%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal%26svc_val_fmt%3Dinfo%3Aofi%2Ffmt%3Akev%3Amtx%3Asch_srv%26rfr_dat%3Dsaltver%3A1%26rfr_dat%3Dorigin%3ASERIALSSOL%26ctx_enc%3Dinfo%3Aofi%2Fenc%3AUTF-8%26ctx_ver%3DZ39.88-2004%26rft_id%3Dinfo%3Adoi%2F10.1016%2Fj.ribaf.2019.101176%26rft.issn%3D02755319%26rft.volume%3D52%26rft.spage%3D101176%26rft.aulast%3DChu%26rft.date%3D2020%26rfr_dat%3Dmd5%3Aed0d4b99c37646f6153a3619e6a3ea2c), Jeffery Chu, 2020
 
 _In a nutshell:_
 
