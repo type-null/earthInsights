@@ -2,6 +2,7 @@
 
 ## Theme choosing (Crypto)
 1. [AVA - Advanced Volatility Arbitrage](http://web.stanford.edu/class/msande448/2019/Final_reports/gr6.pdf), Stanford, 2019
+
 _In a nutshell: Built model to predict with high accuracy where the market is expected to move over the next n minutes._
 
 <details>
@@ -22,4 +23,13 @@ _In a nutshell: Built model to predict with high accuracy where the market is ex
 __Con:__ Not much about trading strategy.
 
 2. [Cryptocurrencies Trading Strategy based on Sentiment Analysis](http://web.stanford.edu/class/msande448/2019/Final_reports/gr4.pdf), Stanford, 2019
-_In a nutshell: _
+
+_In a nutshell:_
+
+3. Technical trading and cryptocurrencies, Robert Hudson, 2019
+
+<HEAD><META HTTP-EQUIV="Content-Type" content="text/html; charset=utf-8"></HEAD><style type="text/css"><!--.TF { FONT-SIZE: 12px; FONT-FAMILY: verdana,arial,helvetica } --></style><font class=TF><font class=tf ><p align="center"><p style="text-indent: -30px; margin-left: 30px;line-height: 2 ">Hudson, R., &amp; Urquhart, A. (08/30/2019). <I>Technical trading and cryptocurrencies</I> Baltzer. doi:10.1007/s10479-019-03357-1<p style="text-indent: -30px; margin-left: 30px;line-height: 2 "></font></font>
+
+hahaah
+
+_test_
