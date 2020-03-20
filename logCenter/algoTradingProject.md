@@ -26,9 +26,7 @@ __Con:__ Not much about trading strategy.
 
 _In a nutshell:_
 
-3. Technical trading and cryptocurrencies, Robert Hudson, 2019
-
-<HEAD><META HTTP-EQUIV="Content-Type" content="text/html; charset=utf-8"></HEAD><style type="text/css"><!--.TF { FONT-SIZE: 12px; FONT-FAMILY: verdana,arial,helvetica } --></style><font class=TF><font class=tf ><p align="center"><p style="text-indent: -30px; margin-left: 30px;line-height: 2 ">Hudson, R., &amp; Urquhart, A. (08/30/2019). <I>Technical trading and cryptocurrencies</I> Baltzer. doi:10.1007/s10479-019-03357-1<p style="text-indent: -30px; margin-left: 30px;line-height: 2 "></font></font>
+3. Hudson R, Urquhart A. Technical trading and cryptocurrencies. _Annals of operations research_. 08/30/2019. doi: 10.1007/s10479-019-03357-1.
 
 hahaah
 
