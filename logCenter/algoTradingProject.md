@@ -2,6 +2,7 @@
 
 ## Theme choosing (Crypto)
 1. [AVA - Advanced Volatility Arbitrage](http://web.stanford.edu/class/msande448/2019/Final_reports/gr6.pdf), Stanford, 2019
+_In a nutshell: Built model to predict with high accuracy where the market is expected to move over the next n minutes._
 <details>
     <ul>
         <li>Problem:
@@ -16,3 +17,7 @@
                 <li>SocialSent</li></ul>
     </ul>
 </details>
+__Con:__ Not much about trading strategy.
+
+2. [Cryptocurrencies Trading Strategy based on Sentiment Analysis](http://web.stanford.edu/class/msande448/2019/Final_reports/gr4.pdf), Stanford, 2019
+_In a nutshell: _
