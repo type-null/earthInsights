@@ -94,7 +94,7 @@ def dob(licenseNo):
 
     """
     url = f'http://a810-bisweb.nyc.gov/bisweb/JobsByLicenseNumberServlet?alljappproftitle=RA&all'\
-        'japplicnumber={licenseNo}&go20=+GO+&requestid=0&allinquirytype=BXS1LI08'
+        'japplicnumber={int(licenseNo)}&go20=+GO+&requestid=0&allinquirytype=BXS1LI08'
 
 # read excel
 df = pd.read_excel('~/Downloads/sample - arch prospecting.xlsx', sheet_name='sample arch list')
