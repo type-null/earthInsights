@@ -20,6 +20,7 @@ class TestMyModule(unittest.TestCase):
 
         # test for each row
         for i in range(len(df)):
-            # result = analyzer.process(df["Input"][i])
+            result = analyzer.process(df["Input"][i])
+            result = json.loads(result)
             expected_result = json.loads(df["Output"][i])
-            # self.assertEqual(result, expected_result)
+            self.assertEqual(result["brands"], expected_result["brands"])
