@@ -13,7 +13,6 @@ from names import STATES, COUNTRIES, BRANDS
 
 def similarity(token, brand):
     """
-    Return most possible brand for given token
     Similarity computed using the Levenshtein distance
     ref: https://www.datacamp.com/community/tutorials/fuzzy-string-python
 
@@ -23,20 +22,19 @@ def similarity(token, brand):
     cols = len(brand)+1
     distance = np.zeros((rows, cols), dtype=int)
 
-    # Populate matrix of zeros with the indeces of each character of both strings
+    # index each character
     for i in range(1, rows):
         for k in range(1, cols):
             distance[i][0] = i
             distance[0][k] = k
 
-    # Iterate over the matrix to compute the cost of deletions,insertions and/or substitutions
+    # Iterate over the matrix to save the cost of difference
     for col in range(1, cols):
         for row in range(1, rows):
             if token[row-1] == brand[col-1]:
-                cost = 0 # the characters are the same
+                # the characters are the same
+                cost = 0
             else:
-                # In order to align the results with those of the Python Levenshtein package, if we choose to calculate the ratio
-                # the cost of a substitution is 2. If we calculate just distance, then the cost of a substitution is 1.
                 cost = 2
             distance[row][col] = min(distance[row-1][col] + 1,          # Cost of deletions
                                      distance[row][col-1] + 1,          # Cost of insertions
