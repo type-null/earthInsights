@@ -9,11 +9,31 @@ Author: Weihang Ren
 import re
 from names import STATES, COUNTRIES, BRANDS
 
-def process(description):
+def match_brands(tokens: list):
+    """
+    Mactch tokens to possible brands
+    Similarity computed using the Levenshtein distance
+    ref: https://www.datacamp.com/community/tutorials/fuzzy-string-python
+
+    """
+
+    brands = {}
+
+    for i in range(len(tokens)):
+
+        brands[f"{i+1}"] = brand
+
+    return brands
+
+
+
+def process(description: str):
     """
     Convert input to output format
 
     """
+    # init variables
+    state, country, phone_no = "", "", ""
 
     # clean special characters
     string = re.sub(re.compile(r'[\'*-]+'), ' ', description.lower())
@@ -25,19 +45,20 @@ def process(description):
     for token in tokens:
         # number
         if token.isnumeric():
-            # TODO: will the phone no in other format: 222-222-2222 ?
+            # TODO: will phone_no be other format: 222-222-2222 ?
             phone_no = token
+            tokens.remove(token)
         # two character: country or state abbreviation
         elif len(token) == 2:
             if token in COUNTRIES:
                 country = token
+                tokens.remove(token)
             elif token in STATES.keys():
                 state = token
-            continue
+                tokens.remove(token)
 
-    brands = match_brands(tokens_remain)
+    brands = match_brands(tokens)
 
-    # init output
     output = {
         "brands": [brands],
         "state": state,

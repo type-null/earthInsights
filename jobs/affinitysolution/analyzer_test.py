@@ -1,18 +1,25 @@
+"""
+test analyzer
 
+"""
+
+import json
 import unittest
+import pandas as pd
 import analyzer
+
 
 class TestMyModule(unittest.TestCase):
 
-    def setUp(self): # run before test runs
-        return # do nothing
-    
-    def test_do_divide(self):
-        arg1 = 4
-        arg2 = 2
+    def setUp(self):
+        return
 
-        result = class_example.do_divide(arg1, arg2)
+    def test_process(self):
+        # read homework sheet
+        df = pd.read_excel('data.xlsx', sheet_name='Transaction Description')
 
-        expectedResult = 2
-
-        self.assertEqual(result, expectedResult)
+        # test for each row
+        for i in range(len(df)):
+            # result = analyzer.process(df["Input"][i])
+            expected_result = json.loads(df["Output"][i])
+            # self.assertEqual(result, expected_result)
