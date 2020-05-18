@@ -31,5 +31,6 @@ May 18, 2020
 
 4. format output
 
-## The Levenshtein Distance
-Reference: [here](https://www.datacamp.com/community/tutorials/fuzzy-string-python)
+## Explaination of `analyzer.similarity()`
+Reference: [The Levenshtein Distance](https://www.datacamp.com/community/tutorials/fuzzy-string-python)
+
