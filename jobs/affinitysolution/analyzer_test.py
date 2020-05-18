@@ -24,3 +24,6 @@ class TestMyModule(unittest.TestCase):
             result = json.loads(result)
             expected_result = json.loads(df["Output"][i])
             self.assertEqual(result["brands"], expected_result["brands"])
+            self.assertEqual(result["state"], expected_result["state"])
+            self.assertEqual(result["country"], expected_result["country"])
+            self.assertEqual(result["ph no"], expected_result["ph no"])

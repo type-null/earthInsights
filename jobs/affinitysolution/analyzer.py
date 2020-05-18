@@ -33,7 +33,7 @@ def similarity(token, brand):
     for col in range(1, cols):
         for row in range(1, rows):
             if token[row-1] == brand[col-1]:
-                cost = 0 # If the characters are the same in the two strings in a given position [i,j] then the cost is 0
+                cost = 0 # the characters are the same
             else:
                 # In order to align the results with those of the Python Levenshtein package, if we choose to calculate the ratio
                 # the cost of a substitution is 2. If we calculate just distance, then the cost of a substitution is 1.
@@ -96,7 +96,7 @@ def process(description: str):
         "brands": [brands],
         "state": state,
         "country": country,
-        "phone no": phone_no,
+        "ph no": phone_no,
     }
 
     return json.dumps(data)
