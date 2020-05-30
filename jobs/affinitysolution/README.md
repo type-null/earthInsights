@@ -48,4 +48,4 @@ Use dynamic programming to calculate the Levenshtein distance matrix for "paypal
 |**l**|5|4|3|2|3|2|**1**|
 
 Then the similarity ratio is calculated by
-$$\frac{|paypal|+|payal|-1}{paypal|+|payal|} = 90.9\%$$
+$$\frac{|paypal|+|payal|-1}{|paypal|+|payal|} = 90.9\%$$
