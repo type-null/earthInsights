@@ -172,3 +172,103 @@ model = tf.estimator.DNNLinearCombinedClassifier(
     dnn_hidden_units=[100,50])
 ```
 
+### Lab 3
+
+- Use the Estimator API to build linear and deep neural network models
+- Use the Estimator API to build wide and deep model
+- Monitor training using TensorBoard
+
+
+
+# Week3
+
+## Operationalize the model
+
+- **Apache Beam**: unified model, for defining both batch and streaming data parallel processing pipelines, and a set of language specific SDKs.
+
+- **Cloud Dataflow**: executes the code in Apache Beam API.
+
+<img src="https://i.imgur.com/5rsG40n.png" width=700 alt="beam">
+<img src="https://i.imgur.com/GOlFYGc.png" width=700 alt="dataflow">
+### An example Beam pipeline for BigQuery->CSV on cloud
+
+```python
+import apache_beam as beam
+
+def transform(rowdict):
+  import copy
+  result = copy.deepcopy(rowdict)
+  if rowdict['a'] > 0:
+    result['c'] = result['a'] * result['b']
+    yield ','.join([str(result[k]) if k in result else 'None' for k in ['a', 'b', 'c']])
+
+  if __name__ == '__main__':
+    p = beam.Pipeline(argv=sys.argv)
+    selquery = 'SELECT a, b FROM someds.sometable'
+    (p
+       | beam.io.Read(beam.io.BigQuerySource(query=selquery,
+                      use_standard_sql=True)) # read input
+       | beam.Map(transform_data) # do some processing
+       | beam.io.WriteToText('gs://...') # write output
+    )
+    p.run() # run the pipeline
+```
+
+### Executing pipeline (Python)
+
+Simply running main() runs pipeline locally
+```bash
+python ./etl.py
+```
+
+To run on cloud, specify cloud parameters
+```bash
+python ./etl.py \
+      --project=$PROJECT \
+      --job_name=myjob \
+      --staging_location=gs://$BUCKET/staging/ \
+      --temp_location=gs://$BUCKET/staging/ \
+      --runner=DataflowRunner    # DirectRunner would be local
+```
+
+<img src="https://i.imgur.com/2LoxC8Q.png" width=800 alt="split data">
+
+### Lab 4
+`4_preproc.ipynb`
+
+## Cloud AI Platform
+
+Cloud AI Platform (formerly known as Cloud ML Engine) makes it easy for machine learning developers, data scientists, and data engineers to take their ML projects from ideation to production and deployment, quickly and cost-effectively. From data engineering to “no lock-in” flexibility, AI Platform’s integrated tool chain helps you build and run your own machine learning applications.
+
+###  `model.py`, `task.py`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
