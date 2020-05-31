@@ -100,7 +100,7 @@ tf.feature_column.categorical_column_with_vocabulary_list('zipcode',
     vocabulary_list=['83452', '72345', '87654', '23451'])
 ```
 
-1b. If your data is already indexed; i.e., has integers in [0,N):
+1b. If your data is already indexed; i.e., has integers in \[0,N):
 ```python
 tf.feature_column.categorical_column_with_identity('stateId',
     num_buckets=50)
@@ -115,6 +115,12 @@ tf.feature_column.indicator_column( my_categorical_column )
 
 or use an embedding column.
 
+### Bucketize numeric features
+```python
+mother_age = tf.feature_column.numeric_column('mother_age')
+age_buckets = tf.feature_column.bucketized_column(mother_age,
+    boundaries=np.arange(15,45,1).tolist())
+```
 
 ### To read CSV files
 create a TextLineDataset giving it a function to decode CSV into features, labels.
