@@ -69,6 +69,8 @@ Course Website: https://cs193p.sites.stanford.edu
   
   <img src="https://i.imgur.com/EA7mbVT.png" width=600 alt="struc vs class">
   
+  Class is easy to share: lives in heap and has pointers to it.
+  
 - `protocol`
 
 - "Don't Care" type (aka generics, type parameter)
