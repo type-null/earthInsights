@@ -1,6 +1,6 @@
-# CS193p Developing Applications for iOS using SwiftUI
+# Developing Applications for iOS using SwiftUI
 
-Stanford University
+Stanford University, CS193p, Spring 2020
 
 Course Website: https://cs193p.sites.stanford.edu
 
