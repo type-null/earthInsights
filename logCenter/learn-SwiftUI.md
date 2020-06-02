@@ -71,8 +71,63 @@ Course Website: https://cs193p.sites.stanford.edu
   
 - `protocol`
 
-- "Don't Care" type (aka generics)
+- "Don't Care" type (aka generics, type parameter)
+  
+  But Swift is a strongly-typed language, so we don’t use variables and such that are “untyped.”
+  
+  Awesome example of generics: `Array`. It doesn’t care at all what type it contains.
+    ```swift
+    struct Array<Element> {
+      ...
+      func append(_ element: Element) { . . . }
+    }
+    ```
+    The type of the argument to append is `Element`. A “don’t care” type.
+    
+    Element is not any known struct or class or protocol, it’s just a placeholder for a type.
+    
+    The code for using an Array looks something like this ...
+    ```swift
+    var a = Array<Int>()
+    a.append(5)
+    a.append(22)
+    ```
+    When someone *uses* Array, *that’s* when Element gets determined (by `Array<Int>`).
+
+  
+  
 
 - `enum`
 
-- functions
+- functions as types
+  
+  Examples ...
+  ```swift
+  (Int,Int)->Bool //takestwoIntsandreturnsaBool
+  (Double) -> Void // takes a Double and returns nothing
+  () -> Array<String> // takes no arguments and returns an Array of Strings
+  () -> Void // takes no arguments and returns nothing (this is a common one)
+  ```
+  All of the above a just types. No different than Bool or View or Array<Int>. All are types. 
+  
+  So we can create vars whose type are functions:
+  
+  ```swift
+  var foo: (Double) -> Void // foo’s type: “function that takes a Double, returns nothing”
+  func doSomething(what: () -> Bool) // what’s type: “function, takes nothing, returns Bool”
+  ```
+  
+  ```swift
+  var operation: (Double) -> Double
+  
+  func square(operand: Double) -> Double {
+      return operand * operand
+  }
+  
+  operation = square // just assigning a value to the operation var, nothing more
+  let result1 = operation(4) // result1 would equal 16
+  // Note that we don’t use argument labels (e.g. operand:) when executing function types.
+  ```
+  
+  
+  
