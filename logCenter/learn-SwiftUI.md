@@ -128,6 +128,12 @@ Course Website: https://cs193p.sites.stanford.edu
   let result1 = operation(4) // result1 would equal 16
   // Note that we don’t use argument labels (e.g. operand:) when executing function types.
   ```
+  + CLosure
+    
+    We call such an inlined function a “closure” and there’s special language support for it.
+    
+    Remember that we are mostly doing “**functional** programming” in SwiftUI.
+    As the very name implies, “functions as types” is a very important concept in Swift. Very.
   
   
   
