@@ -139,3 +139,33 @@ Course Website: https://cs193p.sites.stanford.edu
   
   
   
+### Reading 1 notes
+#### Arrays
+- Some methods: `.count`, `.isEmpty`, 
+- `.append("Flour")` == `+= ["Flour"]`
+```swift
+var firstItem = shoppingList[0]
+// to change a range of values
+shoppingList[4...6] = ["Bananas", "Apples"]
+shoppingList.insert("Maple Syrup", at: 0)
+// remove also returns removed item
+let mapleSyrup = shoppingList.remove(at: 0)
+let apples = shoppingList.removeLast()
+```
+- `.enumerated()` -> (index, value)
+- The largest valid index in an array is `count` - 1 because arrays are indexed from zero—however, when `count` is 0 (meaning the array is empty), there are no valid indexes.
+
+#### Dictionaries
+- initializer `[Int: String]()`, set to empty dict `[:]`
+- Some methods: `.count`, `.isEmpty`, 
+- subscript syntax `airports["LHR"] = "London"`, but to return _oldValue_ was replaced:
+  ```swift
+  // returns an optional value
+  if let oldValue = airports.updateValue("Dublin Airport", forKey: "DUB") {
+    print("The old value for DUB was \(oldValue).")
+  }
+  ```
+- to remove: `airports["APL"] = nil` or `airports.removeValue(forKey: "APL")` (-> removedValue)
+- `.keys`, `.values`
+
+  
