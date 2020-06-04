@@ -141,6 +141,7 @@ Course Website: https://cs193p.sites.stanford.edu
   
 ### Reading 1 notes
 #### Arrays
+- repeating array: `var board = [Int](repeating: 0, count: 10)`
 - Some methods: `.count`, `.isEmpty`, 
 - `.append("Flour")` == `+= ["Flour"]`
 ```swift
@@ -168,4 +169,37 @@ let apples = shoppingList.removeLast()
 - to remove: `airports["APL"] = nil` or `airports.removeValue(forKey: "APL")` (-> removedValue)
 - `.keys`, `.values`
 
-  
+#### For-in loops
+- `stride(from:to:by:)`, closed range: `stride(from:through:by:)`
+  ```swift
+  let minuteInterval = 5
+  for tickMark in stride(from: 0, to: minutes, by: minuteInterval) {
+      // render the tick mark every 5 minutes (0, 5, 10, 15 ... 45, 50, 55)
+  }
+  ```
+#### Switch
+```swift
+// Interval Matching
+case 1..<5:
+// Tuples
+case (0, _):
+    print("\(somePoint) is on the y-axis")
+case (-2...2, -2...2):
+    print("\(somePoint) is inside the box")
+// Value Bindings
+case (let x, 0):
+    print("on the x-axis with an x value of \(x)")
+// Where (check for additional conditions)
+case let (x, y) where x == y:
+    print("(\(x), \(y)) is on the line x == y")
+// Compound Cases
+case (let distance, 0), (0, let distance):
+    print("On an axis, \(distance) from the origin")
+// must be exhaustive
+default:
+    print("Not on an axis")
+```
+
+
+
+
