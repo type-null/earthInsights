@@ -200,6 +200,54 @@ default:
     print("Not on an axis")
 ```
 
+#### Early exit
+`guard`
+- like an `if` statement, executes statements depending on the Boolean value of an expression
+- but always has an `else` clause
+```swift
+func greet(person: [String: String]) {
+    guard let name = person["name"] else {
+        return
+    }
+
+    print("Hello \(name)!")
+
+    guard let location = person["location"] else {
+        print("I hope the weather is nice near you.")
+        return
+    }
+
+    print("I hope the weather is nice in \(location).")
+}
+
+greet(person: ["name": "John"])
+// Prints "Hello John!"
+// Prints "I hope the weather is nice near you."
+greet(person: ["name": "Jane", "location": "Cupertino"])
+// Prints "Hello Jane!"
+// Prints "I hope the weather is nice in Cupertino."
+```
+
+#### Closure
+- syntax:
+
+{ (_parameters_) -> _return type_ `in`
+    _statements_
+}
+```swift
+reversedNames = names.sorted(by: { (s1: String, s2: String) -> Bool in return s1 > s2 } )
+// Inferring Type From Context, Single statement can omit return
+reversedNames = names.sorted(by: { s1, s2 in s1 > s2 } )
+// Shorthand Argument Names
+reversedNames = names.sorted(by: { $0 > $1 } )
+// Operator Methods
+reversedNames = names.sorted(by: >)
+```
+- Trailing CLosures: pass a closure expression to a function as the function’s **final** argument
+```swift
+reversedNames = names.sorted() { $0 > $1 }
+// If a closure is only argument, () can be omitted
+eversedNames = names.sorted { $0 > $1 }
 
 
 
