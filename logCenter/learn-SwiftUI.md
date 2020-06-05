@@ -405,6 +405,17 @@ Adding protocol implementation
 
 - `extentsion`
 
+```swift
+extension Array where Element: Greatness {
+    var greatest: Element {
+        // for-loop through all the Elements
+        // which (inside this extension) we know each implements the Greatness protocol // and figure out which one is greatest by calling isGreaterThan(other:) on them
+        return the greatest by calling isGreaterThan on each Element
+    }
+}
+```
+`Greatness` is a protocol. This part `where` means we don't care about `Array` unless it is an `Array` of `Greatness`.
+
 - add “default implementations” of the protocol’s own funcs/vars
 
 ### Extension
