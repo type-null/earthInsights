@@ -24,6 +24,8 @@ Course Website: https://cs193p.sites.stanford.edu
   
   Both have pretty much exactly the same syntax.
   
+  Whenever you define a new structure or class, you define a new Swift type. Give types `UpperCamelCase` names. (Give properties and methods `lowerCamelCase` names)
+  
   - stored `var`s (the kind you are used to, i.e., stored in memory)
     ```swift
     var isFaceUp: Bool
@@ -248,6 +250,54 @@ reversedNames = names.sorted(by: >)
 reversedNames = names.sorted() { $0 > $1 }
 // If a closure is only argument, () can be omitted
 eversedNames = names.sorted { $0 > $1 }
+```
+
+#### Type Properties
+- Properties that belong to the type itself, not to any one copy instance of that type.
+- Unlike stored instance properties, you must always give stored type properties a default value.
+- `static` for `struct`, `enum`, `class`
+- Use `class` to allow subclasses to override the superclass’s implementation.
+```swift
+class SomeClass {
+    static var storedTypeProperty = "Some value."
+    static var computedTypeProperty: Int {
+        return 27
+    }
+    class var overrideableComputedTypeProperty: Int {
+        return 107
+    }
+}
+```
+
+#### Methods
+- You use the `self` property to refer to the current instance within its own instance methods.
+  ```swift
+  struct Point {
+      var x = 0.0, y = 0.0
+      func isToTheRightOf(x: Double) -> Bool {
+          return self.x > x
+      }
+  }
+  ```
+  
+- `mutating func`: the properties of a value type (`struct`, `enum`) cannot be modified from within its instance methods _unless_ use `mutating` behavior for the modifying method.
+  ```swift
+  struct Point {
+    var x = 0.0, y = 0.0
+    mutating func moveBy(x deltaX: Double, y deltaY: Double) {
+        x += deltaX
+        y += deltaY
+    }
+  }
+  var somePoint = Point(x: 1.0, y: 1.0)
+  somePoint.moveBy(x: 2.0, y: 3.0)
+  print("The point is now at (\(somePoint.x), \(somePoint.y))")
+  // Prints "The point is now at (3.0, 4.0)"
+  ```
+  
+- **Type Methods**: `static func`, methods that are called on the type itself than an instance of that type. `class` to override superclass. 
+  
+
 
 
 
