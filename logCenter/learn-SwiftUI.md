@@ -354,6 +354,68 @@ class SomeClass {
 [Slides](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/l3.pdf)
 
 
+- **ViewModel**: Property wrapper `@Published` *calls* `objectWillChange.send()` everytime `gameModel` changes
+  ```swift
+  @Published private var gameModel: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
+  ```
+- **View**: Property wrapper `@ObservedObject` *redraws* everytime the `ObservableObject` says `objectWillChange.send()`
+  ```swift
+  @ObservedObject var gameViewModel: EmojiMemoryGame
+  ```
+  
+## Protocols
+- A protocol is a type.
+- Sort of "stripped-down" struct/class: has funcs and vars, but no implementation (or storage)!
+  ```swift
+  protocol Moveable {
+      func move(by: Int)
+      var hasMoved: Bool { get } // read only
+      var distanceFromStart: Int { get set } // read/write
+  }
+  ```
+  
+- Now, any other type can *claim to implement* `Moveable`
+  ```swift
+  struct PortableThing: Moveable {
+      // must implement move(by:), hasMoved and distanceFromStart here
+  }
+  ```
+
+- "Protocol inheritance":
+  ```swift
+  protocol Vehicle: Moveable {
+      var passengerCount: Int { get set }
+  }
+  class Car: Vehicle {
+      // must implement move(by:), hasMoved, distanceFromStart and passengerCount here
+  }
+  ```
+
+- Claim to implement multiple protocols:
+  ```swift
+  class Car: Vehicle, Impoundable, Leasable {
+      // must implement move(by:), hasMoved, distanceFromStart and passengerCount here
+      // and must implement any funcs/vars in Impoundable and Leasable too
+  }
+  ```
+
+### Protocol Extension
+Adding protocol implementation
+- "Constrains and gains"
+
+- `extentsion`
+
+- add “default implementations” of the protocol’s own funcs/vars
+
+### Extension
+- You can use an extension to add things to structs and classes too.
+
+- You can even make something conform to a protocol purely via an extension ...
+
+### Generics and Protocols
+
+
+
 
 
 
