@@ -415,13 +415,69 @@ Adding protocol implementation
 ### Generics and Protocols
 
 
+## Layout
 
+3 steps:
+  1. Container Views “offer” space to the Views inside them
+  2. Views then choose what size they want to be
+  3. Container Views then position the Views inside of them
 
+### Container Views
+- The “stacks” (`HStack`, `VStack`) divide up the space offered to them amongst their subviews 
+- `ForEach` defers to its container to lay out the Views inside of it
+- Modifiers (e.g. `.padding()`) essentially “contain” (return) the View they modify. Some do layout.
 
+#### HStack and VStack
+It offers space to its “least flexible” (with respect to sizing) subviews first. (Image > Text > Shape)
 
+- Commonly put in stacks:
+  ```swift
+  Spacer(minLength: CGFloat)
+  // Always takes all the space offered to it.
+  // Draws nothing.
+  // The minLength defaults to the most likely spacing you’d want on a given platform.
+  
+  Divider()
+  // Draws a dividing line cross-wise to the way the stack is laying out.
+  // For example, in an HStack, Divider draws a vertical line.
+  // Takes the minimum space needed to fit the line in the direction the stack is going.
+  
+  ```
+- `.layoutPriority(Double)`
 
+- argument: `alignment: .leading`
 
+#### Modifiers
 
+#### GeometryReader
+You wrap this `GeometryReader` View around what would normally appear in your View’s body
+```swift
+var body: View {
+    GeometryReader { geometry in // not showing content: parameter label
+        ...
+    }
+}
+
+// The geometry parameter is a GeometryProxy. 
+struct GeometryProxy {
+    var size: CGSize
+    func frame(in: CoordinateSpace) -> CGRect
+    var safeAreaInsets: EdgeInsets
+}
+```
+- `GeometryReader` itself (it’s just a View) *always accepts all the space offered to it*.
+
+#### Safe Area
+- To ignore safe area:
+  ```swift
+  ZStack { ... }.edgesIgnoringSafeArea([.top]) // draw in “safe area” on top edge
+  ```
+  
+#### How exactly do containers "offer" space to Views they contain?
+
+- With the modifier `.frame(...)`
+- `.position(CGPoint)`
+- `.offset(CGSize)`
 
 <a name="4"></a>
 # Lecture 4 Grid enum Optionals
