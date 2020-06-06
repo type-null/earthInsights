@@ -511,8 +511,39 @@ struct GeometryProxy {
 An enum is a *value type* (like struct), so it is copied as it is passed around
 - It does not live in the heap, no pointers to it (class does).
 
-### Associated value
+- Use `CaseIterable` and `allCases` to get whole collection of an enum and iterate.
+  ```swift
+  enum Beverage: CaseIterable {
+    case coffee, tea, juice
+  }
+  let numberOfChoices = Beverage.allCases.count
+  ```
 
+### Associated value
+- Implicitly Assigned Raw Values
+  - Use `Int` to store integer values of enumeration
+    ```swift
+    enum Planet: Int {
+      case mercury = 1, venus, earth, mars, jupiter, saturn, uranus, neptune
+    }
+    ```
+  - `String`
+  ```swift
+  enum CompassPoint: String {
+    case north, south, east, west
+  }
+  ```
+  - Access raw value:
+  ```swift
+  let earthsOrder = Planet.earth.rawValue
+  // earthsOrder is 3
+
+  let sunsetDirection = CompassPoint.west.rawValue
+  // sunsetDirection is "west"
+  ```
+
+- Recursive Enumerations
+  - Add `indirect` before `case` or `enum`
 
 ### Optionals
 - Access associated value either by 
@@ -530,6 +561,31 @@ An enum is a *value type* (like struct), so it is copied as it is passed around
   let x: String? = ...
   let y = x ?? "foo"
   ```
+
+## Reading 2
+
+### Closure
+
+- Escaping Closures
+  - One way that a closure can escape is by being stored in a variable that is defined outside the function. 
+  - Marking a closure with @escaping means you have to refer to self explicitly within the closure.
+  ```swift 
+  struct Grid<Item, ItemView>: View where Item: Identifiable, ItemView: View {
+    var items: [Item]
+    var viewForItem: (Item) -> ItemView
+    
+    init(_ items: [Item], viewForItem: @escaping (Item) -> ItemView) {
+        self.items = items
+        self.viewForItem = viewForItem
+    }
+  }
+  ```
+
+
+- Autoclosures
+  - delays evaluation (because it's a function)
+
+### Enum
 
 
 
