@@ -405,6 +405,7 @@ Adding protocol implementation
 
 - `extentsion`
 
+- Generics and protocols
 ```swift
 extension Array where Element: Greatness {
     var greatest: Element {
@@ -490,6 +491,8 @@ struct GeometryProxy {
 - `.position(CGPoint)`
 - `.offset(CGSize)`
 
+
+
 <a name="4"></a>
 # Lecture 4 Grid enum Optionals
 
@@ -499,9 +502,28 @@ struct GeometryProxy {
 [Reading 2](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/r2_0.pdf),
 [Assignment 2](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/a2_0.pdf)
 
+- `@escaping` for functions used in later functions
+
+- Name files contain `extension`s like "Array+Identifiable.swift"
 
 
+## enum
+An enum is a *value type* (like struct), so it is copied as it is passed around
+- It does not live in the heap, no pointers to it (class does).
 
+### Associated value
+
+
+### Optionals
+- Access associated value either by 
+  - Force unwrapping with `!`
+  - or safely using `if let`
+  
+- "Optional defaulting" `??` (nil coalescing operator)
+  ```swift
+  let x: String? = ...
+  let y = x ?? "foo"
+  ```
 
 
 
