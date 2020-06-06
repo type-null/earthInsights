@@ -518,6 +518,12 @@ An enum is a *value type* (like struct), so it is copied as it is passed around
 - Access associated value either by 
   - Force unwrapping with `!`
   - or safely using `if let`
+    - use `,` as sequencial AND instead of `&&`
+      ```swift
+      if let chosenIndex: Int = cards.firstIndex(matching: card), !cards[chosenIndex].isFaceUp {
+        ...
+      }
+      ```
   
 - "Optional defaulting" `??` (nil coalescing operator)
   ```swift
