@@ -611,3 +611,52 @@ An enum is a *value type* (like struct), so it is copied as it is passed around
 [Slides](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/lecture_6.pdf),
 [Reading 3](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/reading_3.pdf),
 [Assignment 3](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/assignment_3.pdf)
+
+## Property Observers
+
+“Watching” a var and reacting to changes
+
+- `willSet` -> `newValue`, `didSet` -> `oldValue`
+
+- completely unrelated to computed var
+
+## @State
+
+State that is entirely localized inside a `View`
+
+Only used for *temporary* state like presentations of alerts or editing things or animation
+
+- You must mark any vars used for this temporary state with `@State` ...
+  ```swift
+    @State private var somethingTemporary: SomeType // this can be of any type
+  ```
+  
+  Marked private because no one else can access this anyway (except upon creating your View). Changes to this `@State` var _will cause your View to redraw if necessary_!
+In that sense, it’s just like an `@ObservedObject`.
+
+## Animation
+
+You can only animate **changes** to Views in containers that are already on screen (CTAAOS).
+  - The appearance and disappearance of `Views` in CTAAOS.
+  - Changes to the arguments to `Animatable` view modifiers of `Views` that are in CTAAOS.
+  - Changes to the arguments to the creation of `Shapes` inside CTAAOS.
+  
+To make an animation "go":
+  - Implicitly, by using the view modifier `.animation(Animation)`.
+  - Explicitly, by wrapping `withAnimation(Animation) { }` around code that might change things.
+
+### Implicit vs. Explicit Animation
+
+### Animating Views
+
+(via their ViewModifiers which can implement the Animatable protocol)
+
+
+### Transitions
+
+(animating the appearance/disappearance of Views by specifying ViewModifiers)
+
+
+### Animating Shapes
+
+(via the `Animatable` protocol)
