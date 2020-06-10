@@ -708,3 +708,6 @@ And they likely will all animate together in response to some user action or Mod
 ### Animating Shapes
 
 (via the `Animatable` protocol)
+
+## Internationalize string
+`LocalizedStringKey`
