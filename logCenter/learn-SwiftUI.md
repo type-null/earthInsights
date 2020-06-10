@@ -647,6 +647,51 @@ To make an animation "go":
 
 ### Implicit vs. Explicit Animation
 
+#### Implicit Animation
+
+- “Automatic animation”
+-  add a `.animation(Animation)` view modifier to the `View` you want to auto-animate.
+  ```swift
+  Text(“👻 ”)
+      .opacity(scary ? 1 : 0)
+      .rotationEffect(Angle.degrees(upsideDown ? 180 : 0)) 
+      .animation(Animation.easeInOut) // Swift could infer the Animation. part, of course
+  ```
+- **Warning!** The `.animation` modifier does not work how you might think on a container. A container just _propagates_ the `.animation` modifier to all the Views it contains.
+
+In other words, `.animation` does not work not like `.padding`, it works more like `.font`.
+
+- The argument to .animation() is an Animation struct.
+It lets you control things about an animation ...
+
+1. duration
+  - delay
+  - repeat or even `repeatForever`
+  
+2. curve
+  - controls the rate at which the animation “plays out” (it’s “curve”) ...
+  - `.linear`
+  - `.easeInOut`: sigmoid
+  - `.spring`: "soft landing" "bounce"
+  
+- Implicit are mostly used on “leaf” (i.e. non-container) Views. on Views that are typically working independently of other Views.
+
+Recall that you can’t implicitly animate a container view (it propagates to the Views inside). That’s because in containers you start wanting to be able to coordinate the Views’ animations. Essentially, a bunch of Views that are contained together want to animate together.
+And they likely will all animate together in response to some user action or Model change. That’s where explicit animation comes in ...
+
+#### Explicit
+
+- appear in closures like `.onTapGesture`
+
+- You supply the Animation (duration, curve, etc.) to use and the block of code. 
+
+  ```swift
+  withAnimation(.linear(duration: 2)) {
+      // do something that will cause ViewModifier/Shape arguments to change somewhere 
+  }
+  ```
+- **Explicit animations do not override an implicit animation.**
+
 ### Animating Views
 
 (via their ViewModifiers which can implement the Animatable protocol)
@@ -655,6 +700,9 @@ To make an animation "go":
 ### Transitions
 
 (animating the appearance/disappearance of Views by specifying ViewModifiers)
+
+- A transition is nothing more than a _pair_ of `ViewModifiers`:
+  - “before”, "after"
 
 
 ### Animating Shapes
