@@ -27,3 +27,5 @@ Also save some [resources](resources) related to the experiences as references f
 ## some resources
 - [IEOR Graduate Student Resume and Cover Letter Resource page](https://ieor.columbia.edu/resume-cover-letter-guidelines)
 
+
+updated chinese and english version of resume in onenote (rwh18)
