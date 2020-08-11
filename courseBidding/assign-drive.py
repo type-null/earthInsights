@@ -12,15 +12,16 @@ coursePair = [{'c1', 'c4'}, {'c2', 'c8'}, {'c3', 'c5'}, {'c6', 'c7'}]
 
 
 class Assign:
-    def __init(self):
-        pass
+    def __init__(self, data, seed=42):
+        self.df = pd.DataFrame(data)
+        self.seed = seed
     
-    
-    def preprocess(self, filename):
+    def preprocess(self):
         """
         Separate file to two groups
         """
-        df = pd.read_excel(filename, header=None)
+        # df = pd.read_excel(filename, header=None)
+        df = self.df
         df= df.replace(to_replace = {'Business Analytics':'c1', 
                                  'Cloud Computing' : 'c2',
                                  'Machine Learning' : 'c3',
@@ -111,13 +112,13 @@ class Assign:
         return pref_dict
 
 
-    def modified_bid(self, df, seed=42):
+    def modified_bid(self, df):
         '''
         Adds a random real number x drawn from uniform distribution for each student-course pair
         Modifies each positive bid b>0 as b'=b+x
         Returns a modified bid matrix
         '''
-        np.random.seed(seed)
+        np.random.seed(self.seed)
         df_ = df.loc[:,'c1':'c8']
         X = np.random.uniform(size=df_.shape)
         mod_bids = df_ + X
@@ -125,11 +126,11 @@ class Assign:
         return mod_bids
 
 
-    def lottery(self, ds, seed=42, reverse=False):
+    def lottery(self, ds, reverse=False):
         '''
         Uses a unique lottery to create a fake bid df for matching
         '''
-        np.random.seed(seed)
+        np.random.seed(self.seed)
         ds = ds.reset_index()
         if reverse:
             list_ = np.flip(np.random.permutation(ds['UNI']))
@@ -234,7 +235,7 @@ class Assign:
 
             # keep top k students
             bid_sc_k = {c: s[:cap[c]] for (c, s) in bid_sc.items()}
-            print(bid_sc_k)
+            # print(bid_sc_k)
 
             # find the list of unmatched student unis
             rejected = [i[1] for l in [s[cap[c]:] for (c, s) in bid_sc.items()] for i in l]
@@ -247,7 +248,7 @@ class Assign:
         # update capacity
         cap = {c: self.newCap(c, k, bid_sc_k) for (c, k) in cap.items()}
 
-        print("Part I (Semi-core): Number of GS rounds:",r+1)
+        print("\tPart I (Semi-core): Number of GS rounds:",r+1)
         # print(bid_sc_k)
         return bid_sc_k, cap
     
@@ -340,19 +341,19 @@ class Assign:
             else:
                 stop = True
 
-        print("Part II (General)  : Number of GS rounds:",r+1)
+        print("\tPart II (General) : Number of GS rounds:",r+1)
         # print(bid_k)
         return bid_k
     
     
-    def test(self, filename, test=1, group=1):
+    def test(self, test=1, group=1):
         """
         test=1: bid
         test=2: bid + preference
         test=3: preference + time slot
         test=4: time order
         """
-        (df_group1, df_group2) = self.preprocess(filename)
+        (df_group1, df_group2) = self.preprocess()
         if group == 1:
             df = df_group1
         elif group == 2:
@@ -392,22 +393,17 @@ class Assign:
             studentView[u].extend(studentViewSC[u])
             
         # The last (third) course is the semi-core requirement
-        return studentView
+        return studentView, df
 
 
-    def reportRank(self, studentView):
+    def reportRank(self, studentView, df):
         """
         Compute average rank
         """
-        trueRank = {u: {c: i for i, c in enumerate(prefs)} 
-                        for u, prefs in self.get_pref(df).items()}
-        studentAvgRank = {u: round(sum([trueRank.get(u).get(c) 
-            for c in m])/3,3) for u, m in studentView.items()}
-        testAvgRank = round(sum([r for (u,r) in studentAvgRank.items()])/len(trueRank),4)
+        trueRank = {u: {c: i for (i, c) in enumerate(prefs)} for (u, prefs) in self.get_pref(df).items()}
+        # print(trueRank)
+        studentAvgRank = {u: round(sum([trueRank.get(u).get(c) for c in m])/3, 3) for u, m in studentView.items()}
+        testAvgRank = round(sum([r for (u, r) in studentAvgRank.items()])/len(trueRank), 4)
         
-        print('Test Average Rank:', testAvgRank)
+        # print('Test Average Rank:', testAvgRank)
         return testAvgRank, studentAvgRank
-
-
-
-
