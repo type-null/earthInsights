@@ -192,7 +192,8 @@ class Assign:
         if same:
             # as per Yuri's recc, give all classes same capacity
             # allCap = minimum capacity per class + some buffer
-            allCap = round(3*len(df)/8) + buffer
+#             allCap = round(3*len(df)/8) + buffer
+            allCap = len(df) # no reject
             cap = {c: allCap for c in course}
         
         return cap
@@ -347,7 +348,11 @@ class Assign:
                 rejected = [u for u in propose.keys() if set(propose[u]) in coursePair]
                 # update propose
                 for u in rejected:
-                    propose[u].pop()
+                    now = propose[u]
+                    if pref[u].index(now[0]) > pref[u].index(now[1]):
+                        propose[u].remove(now[0])
+                    else:
+                        propose[u].remove(now[1])
 
             if rejected: # not empty
                 r += 1
@@ -456,19 +461,65 @@ class Assign:
     
 #     def studentPrefer(self, uni, c1, c2):
         # return True if student uni prefers c1 to c2
-        
+    
+    def coursePairOf(self, c):
+        for s in coursePair:
+            if c in s:
+                c2 = list(s)
+                c2.remove(c)
+                return c2[0]
 
-    def checkStability(self, result):
+    def checkStability(self, result, group=1):
         # check semi-core stability on result from test2
-        # pref_sc = self.get_pref(df, sc=True)
+        (df_group1, df_group2) = self.preprocess()
+        if group == 1:
+            df = df_group1
+        elif group == 2:
+            df = df_group2
+        else:
+            print("Group index out of range!")
+        # pref_sc = self.get_pref(self.df, sc=True)
         pref = self.get_pref(df)
         
-        resultCourse = self.courseToStudentView(result)
+        bid = self.modified_bid(df)
+        coursePref = {c: bid.sort_values(by=[c], ascending=False)[c].index.values.tolist()
+                      for c in course}
+        
+        resultByCourse = {c: [] for c in course}
         for a in result.keys():
+            for c in result[a][:-1]:
+                resultByCourse[c].append(a)
+        lastStudentRank = {c: max([coursePref[c].index(a) 
+                                   for a in resultByCourse[c]]+[-1])
+                           for c in course}
+        for a in result.keys():
+            lastCourseRank = max(pref[a].index(result[a][0]),
+                                 pref[a].index(result[a][1]),
+                                 pref[a].index(result[a][2]))
             for c in course:
                 if c in result[a]:
-                    print(f"{a} is assigned to {c}")
-                    pass
-                elif pref[a]
+#                     print(f"{a} is assigned to {c}")
+                    continue
+                elif pref[a].index(c) > lastCourseRank:
+#                     print(f"{a} prefers all courses assigned to her to {c}")
+                    continue
+                elif coursePref[c].index(a) > lastStudentRank[c]:
+#                     print(f"{c} prefers all students assigned to itself to {a}")
+                    continue
+                elif (self.coursePairOf(c) in result[a] and
+                      pref[a].index(c) > pref[a].index(self.coursePairOf(c))
+                     ):
+#                     print(f"{a} is assigned to and prefer c' {self.coursePairOf(c)} to {c}")
+                    continue
+                elif (self.coursePairOf(c) in result[a] and
+                      self.coursePairOf(c) == result[a][2]
+                     ):
+#                     print(f"{a} is assigned to c' {self.coursePairOf(c)} as semi-core requirement which conflicts with {c}")
+                    continue
+                else:
+                    print(f"Something wrong with {a} and {c}")
+        
+        print("Check complete!")
+                    
 
 
