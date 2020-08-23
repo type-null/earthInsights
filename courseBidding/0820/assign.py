@@ -469,8 +469,11 @@ class Assign:
                 c2.remove(c)
                 return c2[0]
 
-    def checkStability(self, result, group=1):
+    def checkStability(self, result, test=2, group=1):
         # check semi-core stability on result from test2
+        if test==4:
+            print("Test 4 is arbitrary and has no stability!")
+            return
         (df_group1, df_group2) = self.preprocess()
         if group == 1:
             df = df_group1
@@ -478,9 +481,18 @@ class Assign:
             df = df_group2
         else:
             print("Group index out of range!")
-        # pref_sc = self.get_pref(self.df, sc=True)
-        pref = self.get_pref(df)
         
+        if test==1:
+            pref = self.get_bid_pref(df) # get implied pref list from bids
+        else:
+            pref = self.get_pref(df)     # get pref list
+        
+        if test==3:
+            if group == 2:
+                df = self.timeToCourse(df)
+            else:
+                print("Test 3 only applies to df_group2.")
+                
         bid = self.modified_bid(df)
         coursePref = {c: bid.sort_values(by=[c], ascending=False)[c].index.values.tolist()
                       for c in course}
