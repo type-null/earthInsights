@@ -16,7 +16,7 @@ class Assign:
         self.seed = seed
         self.cap_same = cap_same
         self.cap_buffer = cap_buffer
-       
+    
     def __repr__(self):
         if self.cap_same:
             return str(f"seed: {self.seed} \vcapacity same? {self.cap_same} \vcapacity buffer: {self.cap_buffer}")
@@ -469,7 +469,7 @@ class Assign:
                 c2.remove(c)
                 return c2[0]
 
-    def checkStability(self, result, test=2, group=1):
+    def checkStability(self, result, test=2, group=1, bid_pref=True):
         # check semi-core stability on result from test2
         if test==4:
             print("Test 4 is arbitrary and has no stability!")
@@ -482,7 +482,7 @@ class Assign:
         else:
             print("Group index out of range!")
         
-        if test==1:
+        if test==1 and bid_pref:
             pref = self.get_bid_pref(df) # get implied pref list from bids
         else:
             pref = self.get_pref(df)     # get pref list
